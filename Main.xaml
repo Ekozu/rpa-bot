@@ -299,7 +299,7 @@
                       </ui:CloseApplication.Target>
                     </ui:CloseApplication>
                     <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Name, Order, Customer, Contact}]" DataTable="[filteredData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="726,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Write the data into the Excel spreadsheet" sap:VirtualizedContainerService.HintSize="726,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[excelSheet]" WorkbookPath="[excelFile]" />
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Write the PDF data into the Excel spreadsheet" sap:VirtualizedContainerService.HintSize="726,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[excelSheet]" WorkbookPath="[excelFile]" />
                   </Sequence>
                 </ActivityAction>
               </ui:WindowScope.Body>
