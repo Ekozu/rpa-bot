@@ -1,5 +1,5 @@
 {
-  "name": "rpaBot",
+  "name": "rpaFilterBot",
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {

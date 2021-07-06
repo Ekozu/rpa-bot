@@ -4305,15 +4305,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\April\\.nuget\\packages\\": {}
+    "C:\\Users\\aenes\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "rpaBot",
-      "projectName": "rpaBot",
-      "projectPath": "C:\\Users\\April\\Documents\\UiPath\\rpa-bot\\.local",
-      "packagesPath": "C:\\Users\\April\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\April\\Documents\\UiPath\\rpa-bot\\.local"
+      "projectUniqueName": "rpaFilterBot",
+      "projectName": "rpaFilterBot",
+      "projectPath": "C:\\Users\\aenes\\Pictures\\rpa-bot-welcome-feature\\rpa-bot\\.local",
+      "packagesPath": "C:\\Users\\aenes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aenes\\Pictures\\rpa-bot-welcome-feature\\rpa-bot\\.local"
     },
     "frameworks": {
       "net461": {

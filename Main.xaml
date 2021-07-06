@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Email="rparobotik@gmail.com" this:Main.password="kQ3OzK0H" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.emailSender="rparobotik@gmail.com" this:Main.passwordSender="kQ3OzK0H" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="Email" Type="InArgument(x:String)" />
-    <x:Property Name="password" Type="InArgument(x:String)" />
+    <x:Property Name="emailSender" Type="InArgument(x:String)" />
+    <x:Property Name="passwordSender" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>938.4,4116</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>942,4291</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -71,36 +71,36 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="918.4,4016" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="922,4191" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="PDFFiles" />
+      <Variable x:TypeArguments="s:String[]" Name="pdfFiles" />
       <Variable x:TypeArguments="sd:DataTable" Name="filteredData" />
       <Variable x:TypeArguments="x:String" Default="Sheet1" Name="excelSheet" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\aenes\Pictures\pdfToExcel.xlsx" Name="excelFile" />
       <Variable x:TypeArguments="x:String" Name="pdfPath" />
       <Variable x:TypeArguments="x:String" Name="excelPath" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\aenes\Documents\rpaPdf" Name="defaultPdfPath" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\aenes\Pictures\pdfToExcel.xlsx" Name="defaultExcelPath" />
-      <Variable x:TypeArguments="x:String" Default="Rioichi.222@gmail.com" Name="defaultEmail" />
-      <Variable x:TypeArguments="x:String" Name="email" />
+      <Variable x:TypeArguments="x:String" Default="rioichi.222@gmail.com" Name="defaultEmail" />
+      <Variable x:TypeArguments="x:String" Name="emailReceiver" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Welcome Form" FormHeight="400" FormSchema="%[{&quot;tag&quot;:&quot;h1&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Welcome to FilterBot!&quot;,&quot;key&quot;:&quot;label&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;tag&quot;:&quot;h4&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;You can start the app with default settings* or adjust the parameters below&quot;,&quot;key&quot;:&quot;label1&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Start&quot;,&quot;size&quot;:&quot;lg&quot;,&quot;block&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;start&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;align&quot;:&quot;right&quot;}]}]]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:4,&quot;numCols&quot;:1,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Email of receiver&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;email&quot;,&quot;type&quot;:&quot;email&quot;,&quot;input&quot;:true}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Choose the location of .pdf files&quot;,&quot;customClass&quot;:&quot;folderPath&quot;,&quot;key&quot;:&quot;pdfPath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Choose the location of Excel file&quot;,&quot;customClass&quot;:&quot;filePath&quot;,&quot;key&quot;:&quot;excelPath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;}]}],[{&quot;components&quot;:[{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;*if you want to change default fields or customise your FilterBot - contact our Service Team&quot;,&quot;key&quot;:&quot;label2&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]}]]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100260&quot;,&quot;Name&quot;:&quot;Super Hero&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/superhero.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/superhero.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="FilterBot" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="876.8,928" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
+    <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Welcome Form" FormHeight="500" FormSchema="%[{&quot;tag&quot;:&quot;h1&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Welcome to FilterBot!&quot;,&quot;key&quot;:&quot;label&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;tag&quot;:&quot;h4&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Please adjust the parameters below before starting:&quot;,&quot;key&quot;:&quot;label1&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Start&quot;,&quot;size&quot;:&quot;lg&quot;,&quot;block&quot;:true,&quot;disableOnInvalid&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;start&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;align&quot;:&quot;right&quot;}]}]]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:4,&quot;numCols&quot;:1,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Email of receiver&quot;,&quot;tableView&quot;:true,&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;email&quot;,&quot;type&quot;:&quot;email&quot;,&quot;input&quot;:true}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Choose the location of .pdf files&quot;,&quot;customClass&quot;:&quot;folderPath&quot;,&quot;key&quot;:&quot;pdfPath&quot;,&quot;validate&quot;:{&quot;required&quot;:true},&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Choose the location of Excel file&quot;,&quot;customClass&quot;:&quot;filePath&quot;,&quot;key&quot;:&quot;excelPath&quot;,&quot;validate&quot;:{&quot;required&quot;:true},&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;}]}],[{&quot;components&quot;:[{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;*if you want to set default fields or customise your FilterBot - contact our Service Team&quot;,&quot;key&quot;:&quot;label2&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]}]]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100260&quot;,&quot;Name&quot;:&quot;Super Hero&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/superhero.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/superhero.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="FilterBot" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="880,972" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
       <ufa:FormActivity.Body>
         <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-          <Sequence DisplayName="Some &quot;ifs&quot; for default settings //Designer form returns empty Strings if noth. entered (default in variable doesn't work" sap:VirtualizedContainerService.HintSize="524.8,801.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Some &quot;ifs&quot; for default settings //Designer form returns empty Strings if noth. entered (default in variable doesn't work" DisplayName="Condition for Default" sap:VirtualizedContainerService.HintSize="526,846" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[pdfPath = &quot;&quot;]" DisplayName="If for pdfPath" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[pdfPath = &quot;&quot;]" DisplayName="If for pdfPath" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[pdfPath]</OutArgument>
                   </Assign.To>
@@ -110,9 +110,9 @@
                 </Assign>
               </If.Then>
             </If>
-            <If Condition="[excelPath = &quot;&quot;]" DisplayName="If for excelPath" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[excelPath = &quot;&quot;]" DisplayName="If for excelPath" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[excelPath]</OutArgument>
                   </Assign.To>
@@ -122,11 +122,11 @@
                 </Assign>
               </If.Then>
             </If>
-            <If Condition="[email = &quot;&quot;]" DisplayName="If for email" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[emailReceiver = &quot;&quot;]" DisplayName="If for email" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[emailReceiver]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">[defaultEmail]</InArgument>
@@ -145,39 +145,39 @@
       <ufa:FormActivity.FormFieldsCollection>
         <OutArgument x:TypeArguments="x:String" x:Key="pdfPath">[pdfPath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="excelPath">[excelPath]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="email" />
+        <OutArgument x:TypeArguments="x:String" x:Key="email">[emailReceiver]</OutArgument>
       </ufa:FormActivity.FormFieldsCollection>
     </ufa:FormActivity>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="876.8,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;your pdfpath is &quot; +pdfPath+&quot;   your excelpath is &quot; +excelPath+&quot; email: &quot; + email]" />
-    <Assign DisplayName="Choose PDF Folder Path" sap:VirtualizedContainerService.HintSize="876.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="880,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;your pdfpath is &quot; +pdfPath+&quot;   your excelpath is &quot; +excelPath+&quot; email: &quot; + emailReceiver]" />
+    <Assign DisplayName="Choose PDF Folder Path" sap:VirtualizedContainerService.HintSize="880,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[PDFFiles]</OutArgument>
+        <OutArgument x:TypeArguments="s:String[]">[pdfFiles]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(pdfPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Read Excel File" sap:VirtualizedContainerService.HintSize="876.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[excelSheet]" WorkbookPath="[excelPath]" />
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="876.8,2038.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PDFFiles]">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Read Excel File" sap:VirtualizedContainerService.HintSize="880,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[excelSheet]" WorkbookPath="[excelPath]" />
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="880,2024" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pdfFiles]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="841.6,1904" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844,1889" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process to read PDF File" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="800,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Open PDF Reader to read PDF Files" sap:VirtualizedContainerService.HintSize="800,1683.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="08fe6350447f4da62b2e27a09769d639" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='rpa-pdf-*.pdf - Adobe Acrobat Reader DC (32-bit)' /&gt;">
+            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process to read PDF File" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="802,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Open PDF Reader to read PDF Files" sap:VirtualizedContainerService.HintSize="802,1670" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="08fe6350447f4da62b2e27a09769d639" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='rpa-pdf-*.pdf - Adobe Acrobat Reader DC (32-bit)' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="766.4,1536" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,1524" sap2010:WorkflowViewState.IdRef="Sequence_1">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="ui:GenericValue" Name="Name" />
                       <Variable x:TypeArguments="ui:GenericValue" Name="Order" />
@@ -189,7 +189,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Zoom PDF Document to 100%" sap:VirtualizedContainerService.HintSize="724.8,117.6" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="num1" KeyModifiers="Ctrl" SpecialKey="True">
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Zoom PDF Document to 100%" sap:VirtualizedContainerService.HintSize="726,117" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="num1" KeyModifiers="Ctrl" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1fba1057-2478-4589-b012-ba62c41aaebd">
                           <ui:Target.TimeoutMS>
@@ -201,13 +201,13 @@
                         </ui:Target>
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="724.8,200" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
                       <ui:AnchorBase.Action>
                         <ActivityAction x:TypeArguments="ui:Anchor">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
                           </ActivityAction.Argument>
-                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Name&quot;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Name&quot;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                             <ui:GetValue.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ad97e7ca-37fd-47f2-bf3d-5352b99ee569" InformativeScreenshot="fb83b8392bd4bdd796a35958ed371c5e" Selector="&lt;ctrl role='text' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -225,7 +225,7 @@
                         </ActivityAction>
                       </ui:AnchorBase.Action>
                       <ui:AnchorBase.AnchorProvider>
-                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Name&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Name&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                           <ui:WaitUiElementAppear.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6836987e-c993-415c-8817-b706e9b89d7c" InformativeScreenshot="47878b069c8337a1b245374a7e7520b2" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='NAME   ' role='text' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -245,13 +245,13 @@
                         </ui:WaitUiElementAppear>
                       </ui:AnchorBase.AnchorProvider>
                     </ui:AnchorBase>
-                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="724.8,200" sap2010:WorkflowViewState.IdRef="AnchorBase_4">
+                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_4">
                       <ui:AnchorBase.Action>
                         <ActivityAction x:TypeArguments="ui:Anchor">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
                           </ActivityAction.Argument>
-                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Order ID&quot;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Order ID&quot;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
                             <ui:GetValue.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9c4f7444-632b-47ec-b6bd-335bbc181498" InformativeScreenshot="60cc79defe26eb5b625791f5bed75cf2" Selector="&lt;ctrl role='text' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -269,7 +269,7 @@
                         </ActivityAction>
                       </ui:AnchorBase.Action>
                       <ui:AnchorBase.AnchorProvider>
-                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Order ID&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Order ID&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
                           <ui:WaitUiElementAppear.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="180192d5-f972-4b44-9f35-00304547255e" InformativeScreenshot="2b5bf644dd3df4a1f63bd3dd4e978aa8" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='ORDER ID   ' role='text' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -283,13 +283,13 @@
                         </ui:WaitUiElementAppear>
                       </ui:AnchorBase.AnchorProvider>
                     </ui:AnchorBase>
-                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="724.8,200" sap2010:WorkflowViewState.IdRef="AnchorBase_5">
+                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_5">
                       <ui:AnchorBase.Action>
                         <ActivityAction x:TypeArguments="ui:Anchor">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
                           </ActivityAction.Argument>
-                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Customer ID&quot;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Customer ID&quot;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
                             <ui:GetValue.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f3011173-274a-4292-adb5-2bc3b4cae9a7" InformativeScreenshot="a5e374b6f9b6cc47f2489d07227b20fc" Selector="&lt;ctrl role='text' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -307,7 +307,7 @@
                         </ActivityAction>
                       </ui:AnchorBase.Action>
                       <ui:AnchorBase.AnchorProvider>
-                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Customer  ID&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
+                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Customer  ID&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
                           <ui:WaitUiElementAppear.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b80a0b1-ecd0-41c5-90fe-4c3a8cb1231e" InformativeScreenshot="3dc393cadb899252edc6d3e061198c7e" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='CUSTOMER ID   ' role='text' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -321,13 +321,13 @@
                         </ui:WaitUiElementAppear>
                       </ui:AnchorBase.AnchorProvider>
                     </ui:AnchorBase>
-                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="724.8,200" sap2010:WorkflowViewState.IdRef="AnchorBase_6">
+                    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_6">
                       <ui:AnchorBase.Action>
                         <ActivityAction x:TypeArguments="ui:Anchor">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
                           </ActivityAction.Argument>
-                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Contact&quot;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text &quot;Contact&quot;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
                             <ui:GetValue.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9bb27fa2-315f-452f-951e-2d730449d7d6" InformativeScreenshot="ba32f92fcca16817b5d9b8a0f7d0741f" Selector="&lt;ctrl role='text' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -345,7 +345,7 @@
                         </ActivityAction>
                       </ui:AnchorBase.Action>
                       <ui:AnchorBase.AnchorProvider>
-                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Contact&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anchor &quot;Contact&quot; in PDF Document" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
                           <ui:WaitUiElementAppear.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43ad1481-7678-464f-bbb2-1d406f322667" InformativeScreenshot="d5e640ca80dcf63c08958fba5c816636" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='CONTACT   ' role='text' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -359,7 +359,7 @@
                         </ui:WaitUiElementAppear>
                       </ui:AnchorBase.AnchorProvider>
                     </ui:AnchorBase>
-                    <ui:CloseApplication DisplayName="Close PDF Reader" sap:VirtualizedContainerService.HintSize="724.8,107.2" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                    <ui:CloseApplication DisplayName="Close PDF Reader" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
                       <ui:CloseApplication.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6fea8f9a-0262-46cc-9d81-a3cd573c342e" InformativeScreenshot="e799dce3d9009e88eb9a48a29ce5d0da">
                           <ui:Target.TimeoutMS>
@@ -371,8 +371,8 @@
                         </ui:Target>
                       </ui:CloseApplication.Target>
                     </ui:CloseApplication>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Name, Order, Customer, Contact}]" DataTable="[filteredData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="724.8,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Write the PDF data into the Excel spreadsheet" sap:VirtualizedContainerService.HintSize="724.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[excelSheet]" WorkbookPath="[excelFile]" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Name, Order, Customer, Contact}]" DataTable="[filteredData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="726,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[filteredData]" DisplayName="Write the PDF data into the Excel spreadsheet" sap:VirtualizedContainerService.HintSize="726,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[excelSheet]" WorkbookPath="[excelPath]" />
                   </Sequence>
                 </ActivityAction>
               </ui:WindowScope.Body>
@@ -387,30 +387,50 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="876.8,262.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[excelFile]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="880,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[excelPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelRemoveDuplicatesRange DisplayName="Remove Duplicates" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelRemoveDuplicatesRange_1" Range="A:D" SheetName="[excelSheet]" />
+            <ui:ExcelRemoveDuplicatesRange DisplayName="Remove Duplicates" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelRemoveDuplicatesRange_1" Range="A:D" SheetName="[excelSheet]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="Here are the requested data" DisplayName="Send SMTP Mail Message" Email="[Email]" EnableSSL="True" From="[Email]" sap:VirtualizedContainerService.HintSize="876.8,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Filter Bot" Password="[password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Filter Bot" To="[email]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="Here are the requested data" DisplayName="Send SMTP Mail Message" Email="[emailSender]" EnableSSL="True" From="[emailSender]" sap:VirtualizedContainerService.HintSize="880,147" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Filter Bot" Password="[passwordSender]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Filter Bot" To="[emailReceiver]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[excelFile]</InArgument>
+          <InArgument x:TypeArguments="x:String">[excelPath]</InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="876.8,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;E-Mail was sent successfully&quot;]" />
+    <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" SelectedButton="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Filter Bot Finish" FormHeight="200" FormSchema="%[{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;center&quot;,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numCols&quot;:1,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;E-Mail was sent successfully&quot;,&quot;key&quot;:&quot;label&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]}]],&quot;numRows&quot;:1},{&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;Alles gut&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100260&quot;,&quot;Name&quot;:&quot;Super Hero&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/superhero.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/superhero.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Filter Bot Finish" FormWidth="600" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="880,210" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" TimeoutInSeconds="7">
+      <ufa:FormActivity.Body>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </ufa:FormActivity.Body>
+      <ufa:FormActivity.DelayBody>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_3" />
+        </ActivityAction>
+      </ufa:FormActivity.DelayBody>
+      <ufa:FormActivity.FormFieldsCollection>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ufa:FormActivity.FormFieldsCollection>
+    </ufa:FormActivity>
   </Sequence>
 </Activity>
